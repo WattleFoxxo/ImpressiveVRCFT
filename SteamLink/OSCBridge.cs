@@ -6,7 +6,11 @@ namespace Impressive;
 public class OSCBridge
 {
     public bool Listening { get; private set; }
-    public int Port => Impressive.Config!.GetValue(Impressive.Port_Config);
+
+    public int InPort => Impressive.Config!.GetValue(Impressive.In_Port_Config);
+    public int OutPort => Impressive.Config!.GetValue(Impressive.Out_Port_Config);
+    public string OutAddress => Impressive.Config!.GetValue(Impressive.Out_Address_Config);
+
     public EventHandler<OscPacket>? ReceivedPacket;
     private Thread? listenThread;
     private CancellationTokenSource tkSrc = new();
@@ -21,16 +25,26 @@ public class OSCBridge
         tkSrc = new();
         try
         {
-            Impressive.Msg("Creating receiver");
-            OscReceiver recv = new(IPAddress.Any, Port);
+            Impressive.Msg("Creating receiver and sender");
+            OscReceiver recv = new(IPAddress.Any, InPort);
+            OscSender send = new(IPAddress.Parse(OutAddress), OutPort);
+
             Impressive.Msg("Creating thread loop");
             listenThread = new(new ThreadStart(() => ListenLoop(recv, tkSrc.Token)));
-            Impressive.Msg("Connecting receiver");
+
+            Impressive.Msg("Connecting receiver and sender");
             recv.Connect();
+            send.Connect();
+
+            Impressive.Msg("Sending VRCFT parameters");
+            send.Send(new OscMessage("/avatar/change", "vrc_parameters"));
+
             Impressive.Msg("Starting thread");
             listenThread.Start();
+
             Impressive.Msg("Thread started, listening!");
             Listening = true;
+
             return true;
         }
         catch (Exception ex)

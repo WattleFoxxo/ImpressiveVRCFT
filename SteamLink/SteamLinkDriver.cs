@@ -62,7 +62,9 @@ public class SteamLinkDriver : IInputDriver
 
                 // Subscribe events for receiving packets, changing config options, and shutting down
                 bridge.ReceivedPacket += OnNewPacket;
-                Impressive.Port_Config.OnChanged += OnSettingChanged;
+                Impressive.In_Port_Config.OnChanged += OnSettingChanged;
+                Impressive.Out_Port_Config.OnChanged += OnSettingChanged;
+                Impressive.Out_Address_Config.OnChanged += OnSettingChanged;
                 i.Engine.OnShutdown += Shutdown;
             }
         }

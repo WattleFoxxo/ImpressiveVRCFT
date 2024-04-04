@@ -20,101 +20,100 @@ public class SteamFace
 
 
     // Cheeks
-    [OSCMap("/sl/xrfb/facew/CheekPuffL")]
+    [OSCMap("/avatar/parameters/FT/v2/CheekPuffLeft")]
     public float CheekPuffL;
 
-    [OSCMap("/sl/xrfb/facew/CheekSuckL")]
+    [OSCMap("/avatar/parameters/FT/v2/CheekSuckLeft")]
     public float CheekSuckL;
 
-    [OSCMap("/sl/xrfb/facew/CheekPuffR")]
+    [OSCMap("/avatar/parameters/FT/v2/CheekPuffRight")]
     public float CheekPuffR;
 
-    [OSCMap("/sl/xrfb/facew/CheekSuckR")]
+    [OSCMap("/avatar/parameters/FT/v2/CheekSuckRight")]
     public float CheekSuckR;
 
 
 
     // Jaw
-    [OSCMap("/sl/xrfb/facew/JawSidewaysLeft")]
+    [OSCMap("/avatar/parameters/FT/v2/JawLeft")]
     public float JawLeft;
 
-    [OSCMap("/sl/xrfb/facew/JawSidewaysRight")]
+    [OSCMap("/avatar/parameters/FT/v2/JawRight")]
     public float JawRight;
 
-    [OSCMap("/sl/xrfb/facew/JawDrop")]
+    [OSCMap("/avatar/parameters/FT/v2/JawOpen")]
     public float JawDown;
 
-    [OSCMap("/sl/xrfb/facew/JawThrust")]
+    [OSCMap("/avatar/parameters/FT/v2/JawForward")]
     public float JawForward;
 
 
     // Mouth Left/Right
-    [OSCMap("/sl/xrfb/facew/MouthLeft")]
+    [OSCMap("/avatar/parameters/FT/v2/MouthPressLeft")]
     public float MouthLeft;
 
-    [OSCMap("/sl/xrfb/facew/MouthRight")]
+    [OSCMap("/avatar/parameters/FT/v2/MouthPressRight")]
     public float MouthRight;
 
 
-
     // Lips
-    [OSCMap("/sl/xrfb/facew/LipsToward")]
+    [OSCMap("/avatar/parameters/FT/v2/MouthClosed")]
     public float LipsToward; // Whether the lips are closed when the jaw is down
 
-    [OSCMap("/sl/xrfb/facew/LipPuckerL")]
+    [OSCMap("/avatar/parameters/FT/v2/LipPuckerLowerLeft")]
     public float LipPuckerL;
 
-    [OSCMap("/sl/xrfb/facew/LipPuckerR")]
+    [OSCMap("/avatar/parameters/FT/v2/LipPuckerLowerRight")]
     public float LipPuckerR;
 
-    [OSCMap("/sl/xrfb/facew/LowerLipDepressorL")]
+    [OSCMap("/avatar/parameters/FT/v2/MouthLowerDownLeft")]
     public float LowerLeftLip;
 
-    [OSCMap("/sl/xrfb/facew/LowerLipDepressorR")]
+    [OSCMap("/avatar/parameters/FT/v2/MouthLowerDownRight")]
     public float LowerRightLip;
 
-    [OSCMap("/sl/xrfb/facew/UpperLipRaiserL")]
+    [OSCMap("/avatar/parameters/FT/v2/MouthUpperUpLeft")]
     public float RaiseLeftLip;
 
-    [OSCMap("/sl/xrfb/facew/UpperLipRaiserR")]
+    [OSCMap("/avatar/parameters/FT/v2/MouthUpperUpRight")]
     public float RaiseRightLip;
 
-    [OSCMap("/sl/xrfb/facew/LipFunnelerLB")]
+    [OSCMap("/avatar/parameters/FT/v2/LipFunnelLowerLeft")]
     public float LipFunnelBottomL;
 
-    [OSCMap("/sl/xrfb/facew/LipFunnelerRB")]
+    [OSCMap("/avatar/parameters/FT/v2/LipFunnelLowerRight")]
     public float LipFunnelBottomR;
 
-    [OSCMap("/sl/xrfb/facew/LipFunnelerLT")]
+    [OSCMap("/avatar/parameters/FT/v2/LipFunnelUpperLeft")]
     public float LipFunnelTopL;
 
-    [OSCMap("/sl/xrfb/facew/LipFunnelerRT")]
+    [OSCMap("/avatar/parameters/FT/v2/LipFunnelUpperRight")]
     public float LipFunnelTopR;
 
-    [OSCMap("/sl/xrfb/facew/LipSuckLB")]
+    [OSCMap("/avatar/parameters/FT/v2/LipSuckLowerLeft")]
     public float LipSuckBottomL;
 
-    [OSCMap("/sl/xrfb/facew/LipSuckRB")]
+    [OSCMap("/avatar/parameters/FT/v2/LipSuckLowerRight")]
     public float LipSuckBottomR;
 
-    [OSCMap("/sl/xrfb/facew/LipSuckLT")]
+    [OSCMap("/avatar/parameters/FT/v2/LipSuckUpperLeft")]
     public float LipSuckTopL;
 
-    [OSCMap("/sl/xrfb/facew/LipSuckRT")]
+    [OSCMap("/avatar/parameters/FT/v2/LipSuckUpperRight")]
     public float LipSuckTopR;
 
 
     //Smiling/Frowning
-    [OSCMap("/sl/xrfb/facew/LipCornerPullerL")]
+    [OSCMap("/avatar/parameters/FT/v2/MouthCornerPullLeft")]
     public float SmileL;
 
-    [OSCMap("/sl/xrfb/facew/LipCornerPullerR")]
+    [OSCMap("/avatar/parameters/FT/v2/MouthCornerPullRight")]
     public float SmileR;
 
-    [OSCMap("/sl/xrfb/facew/LipCornerDepressorL")]
+    [OSCMap("/avatar/parameters/FT/v2/MouthFrownLeft")]
     public float FrownL;
 
-    [OSCMap("/sl/xrfb/facew/LipCornerDepressorR")]
+    [OSCMap("/avatar/parameters/FT/v2/MouthFrownRight")]
     public float FrownR;
 
 
@@ -123,17 +122,17 @@ public class SteamFace
 
 
     /* 
-    [OSCMap("/sl/xrfb/facew/ToungeTipInterdental")]
-    [OSCMap("/sl/xrfb/facew/FrontDorsalPalate")]
-    [OSCMap("/sl/xrfb/facew/FrontDorsalPalate")]
-    [OSCMap("/sl/xrfb/facew/MidDorsalPalate")]
-    [OSCMap("/sl/xrfb/facew/BackDorsalVelar")]
-    [OSCMap("/sl/xrfb/facew/ToungeRetreat")]
-    [OSCMap("/sl/xrfb/facew/ToungeTipAlveolar")] 
+    [OSCMap("/avatar/parameters/FT/v2/ToungeTipInterdental")]
+    [OSCMap("/avatar/parameters/FT/v2/FrontDorsalPalate")]
+    [OSCMap("/avatar/parameters/FT/v2/FrontDorsalPalate")]
+    [OSCMap("/avatar/parameters/FT/v2/MidDorsalPalate")]
+    [OSCMap("/avatar/parameters/FT/v2/BackDorsalVelar")]
+    [OSCMap("/avatar/parameters/FT/v2/ToungeRetreat")]
+    [OSCMap("/avatar/parameters/FT/v2/ToungeTipAlveolar")] 
     */
 
     // Seems to only support tongue out properly right now.
-    [OSCMap("/sl/xrfb/facew/ToungeOut")]
+    [OSCMap("/avatar/parameters/FT/v2/TongueOut")]
     public float TongueOut;
     
 

@@ -42,18 +42,16 @@
     <Reference Include="Assembly-CSharp">
       <HintPath>$(ResonitePath)Resonite_Data\Managed\Assembly-CSharp.dll</HintPath>
     </Reference>
+    <Reference Include="Rug.Osc">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Resonite\rml_libs\Rug.Osc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
     <Reference Include="UnityFrooxEngineRunner">
       <HintPath>$(ResonitePath)Resonite_Data\Managed\UnityFrooxEngineRunner.dll</HintPath>
     </Reference>
     <Reference Include="Re-Sounding">
       <HintPath>$(ResonitePath)rml_libs\Re-Sounding.dll</HintPath>
     </Reference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Rug.Osc" Version="1.2.5" />
-    <PackageReference Include="System.Collections.Immutable" Version="8.0.0" />
-    <PackageReference Include="System.Memory" Version="4.5.5" />
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">

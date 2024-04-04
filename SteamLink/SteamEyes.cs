@@ -34,20 +34,20 @@ public class SteamEyes
     #region EyesDir
 
 
-    // Left eye direction
-    [OSCMap("/avatar/parameters/LeftEyeX")]
+    // Left eye direction 
+    [OSCMap("/avatar/parameters/FT/v2/EyeLeftX")]
     public float LeftEyeX { set => EyeLeft.SetDirectionFromXY(X: value); }
 
-    [OSCMap("/avatar/parameters/LeftEyeY")]
+    [OSCMap("/avatar/parameters/FT/v2/EyeLeftY")]
     public float LeftEyeY { set => EyeLeft.SetDirectionFromXY(Y: value); }
 
     
 
-    // Right eye direction
-    [OSCMap("/avatar/parameters/RightEyeX")]
+    // Right eye direction 
+    [OSCMap("/avatar/parameters/FT/v2/EyeRightX")]
     public float RightEyeX { set => EyeRight.SetDirectionFromXY(X: value); }
 
-    [OSCMap("/avatar/parameters/RightEyeY")]
+    [OSCMap("/avatar/parameters/FT/v2/EyeRightY")]
     public float RightEyeY { set => EyeRight.SetDirectionFromXY(Y: value); }
 
     
@@ -57,34 +57,34 @@ public class SteamEyes
     #region Eyelids
 
     // Right eyes
-    [OSCMap("/avatar/parameters/RightEyeLid")]
-    public float RightEyeLid { set => EyeRight.Eyelid = 1f - MathX.Sqrt(value); }
+    [OSCMap("/avatar/parameters/FT/v2/EyeLidRight")]
+    public float RightEyeLid { set => EyeRight.Eyelid = value; }
 
-    [OSCMap("/sl/xrfb/facew/UpperLidRaiserR")]
+    [OSCMap("/avatar/parameters/FT/v2/EyeSquintRight")]
     public float RightEyeLidExpandedSqueeze { set => EyeRight.ExpandedSqueeze = value; }
 
 
-    [OSCMap("/avatar/parameters/RightEyeSqueezeToggle")]
-    public int RightEyeSqueezeToggle { set => EyeRight.SqueezeToggle = value; }
+    // [OSCMap("/avatar/parameters/RightEyeSqueezeToggle")]
+    // public int RightEyeSqueezeToggle { set => EyeRight.SqueezeToggle = value; } // Not used
 
-    [OSCMap("/avatar/parameters/RightEyeWidenToggle")]
-    public int RightEyeWidenToggle { set => EyeRight.WidenToggle = value; }
+    // [OSCMap("/avatar/parameters/RightEyeWidenToggle")]
+    // public int RightEyeWidenToggle { set => EyeRight.WidenToggle = value; } // Not used
 
 
 
     // Left eyes
-    [OSCMap("/avatar/parameters/LeftEyeLid")]
-    public float LeftEyeLid { set => EyeLeft.Eyelid = 1f - MathX.Sqrt(value); }
+    [OSCMap("/avatar/parameters/FT/v2/EyeLidLeft")]
+    public float LeftEyeLid { set => EyeLeft.Eyelid = value; }
 
-    [OSCMap("/sl/xrfb/facew/UpperLidRaiserL")]
+    [OSCMap("/avatar/parameters/FT/v2/EyeSquintLeft")]
     public float LeftEyeLidExpandedSqueeze { set => EyeLeft.ExpandedSqueeze = value; }
 
 
-    [OSCMap("/avatar/parameters/LeftEyeSqueezeToggle")]
-    public int LeftEyeSqueezeToggle { set => EyeLeft.SqueezeToggle = value; }
+    // [OSCMap("/avatar/parameters/LeftEyeSqueezeToggle")]
+    // public int LeftEyeSqueezeToggle { set => EyeLeft.SqueezeToggle = value; } // Not used
 
-    [OSCMap("/avatar/parameters/LeftEyeWidenToggle")]
-    public int LeftEyeWidenToggle { set => EyeLeft.WidenToggle = value; }
+    // [OSCMap("/avatar/parameters/LeftEyeWidenToggle")]
+    // public int LeftEyeWidenToggle { set => EyeLeft.WidenToggle = value; } // Not used
 
 
     #endregion
