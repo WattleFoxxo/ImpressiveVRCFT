@@ -13,3 +13,5 @@ ImpressiveVRCFT is a mod for [Resonite](https://resonite.com) via [ResoniteModLo
 3. Simply unzip the latest zip from releases and drop the "Resonite" folder, onto your own wherever you have Resonite installed. This will  move all of the prerequisite files to the locations that they need to be in.
 4. You're done! Simply boot up VRCFaceTracking then Resonite.
 
+## Tested headsets
+- Pico 4 Pro
