@@ -36,8 +36,8 @@ public class OSCBridge
             recv.Connect();
             send.Connect();
 
-            Impressive.Msg("Sending VRCFT parameters");
-            send.Send(new OscMessage("/avatar/change", "vrc_parameters"));
+            Impressive.Msg("Forcing VRCFT parameters");
+            send.Send(new OscMessage("/vrcft/settings/forceRelevant", true));
 
             Impressive.Msg("Starting thread");
             listenThread.Start();
