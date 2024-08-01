@@ -57,8 +57,26 @@ public class SteamLinkDriver : IInputDriver
                 Impressive.Msg("Starting SteamLink datastream!");
 
                 // Register eye and mouth tracking devices
-                eyes = new(input, "Steam Link Datastream");
-                mouth = new(input, "Steam Link Datastream");
+                eyes = new(input, "Steam Link Datastream", false);
+                mouth = new(input, "Steam Link Datastream", new MouthParameterGroup[16]
+                {
+                      MouthParameterGroup.JawPose,
+                      MouthParameterGroup.JawOpen,
+                      MouthParameterGroup.TonguePose,
+                      MouthParameterGroup.LipRaise,
+                      MouthParameterGroup.LipHorizontal,
+                      MouthParameterGroup.SmileFrown,
+                      MouthParameterGroup.MouthDimple,
+                      MouthParameterGroup.MouthPout,
+                      MouthParameterGroup.LipOverturn,
+                      MouthParameterGroup.LipOverUnder,
+                      MouthParameterGroup.LipStretchTighten,
+                      MouthParameterGroup.LipsPress,
+                      MouthParameterGroup.CheekPuffSuck,
+                      MouthParameterGroup.CheekRaise,
+                      MouthParameterGroup.ChinRaise,
+                      MouthParameterGroup.NoseWrinkle
+                });
 
                 // Subscribe events for receiving packets, changing config options, and shutting down
                 bridge.ReceivedPacket += OnNewPacket;
@@ -200,7 +218,8 @@ public class SteamLinkDriver : IInputDriver
         mouth.CheekRightPuffSuck = faceData.CheekPuffSuckR;
         mouth.JawOpen = faceData.JawDown - faceData.LipsToward;
         mouth.Jaw = faceData.JawPos + new float3(0f, mouth.JawOpen, 0f); // Negate jaw open if the jaw & lips are actually open so we don't keep the ape face.
-        mouth.MouthPout = (faceData.LipPuckerL + faceData.LipPuckerR) * 0.5f;
+        mouth.MouthPoutLeft = faceData.LipPuckerL;
+        mouth.MouthPoutRight = faceData.LipPuckerR;
         mouth.MouthLeftSmileFrown = faceData.SmileFrownLeft;
         mouth.MouthRightSmileFrown = faceData.SmileFrownRight;
 
@@ -209,11 +228,17 @@ public class SteamLinkDriver : IInputDriver
         mouth.LipLowerLeftRaise = faceData.LowerLeftLip;
         mouth.LipLowerRightRaise = faceData.LowerRightLip;
 
-        mouth.LipBottomOverturn = faceData.LipBottomOverturn;
-        mouth.LipTopOverturn = faceData.LipTopOverturn;
+        mouth.LipBottomLeftOverturn = faceData.LipBottomOverturn;
+        mouth.LipBottomRightOverturn = faceData.LipBottomOverturn;
 
-        mouth.LipTopOverUnder = faceData.LipSuckbottom;
-        mouth.LipBottomOverUnder = faceData.LipSuckTop;
+        mouth.LipTopLeftOverturn = faceData.LipTopOverturn;
+        mouth.LipTopRightOverturn = faceData.LipTopOverturn;
+
+        mouth.LipBottomLeftOverUnder = faceData.LipSuckbottom;
+        mouth.LipBottomRightOverUnder = faceData.LipSuckbottom;
+
+        mouth.LipTopLeftOverUnder = faceData.LipSuckTop;
+        mouth.LipTopRightOverUnder = faceData.LipSuckTop;
 
         mouth.LipUpperHorizontal = faceData.MouthRight - faceData.MouthLeft;
         mouth.LipLowerHorizontal = faceData.MouthRight - faceData.MouthLeft;

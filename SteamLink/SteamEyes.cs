@@ -30,16 +30,17 @@ public class SteamEyes
 
     private floatQ _lastValidCombined = floatQ.Identity;
 
-    
+
     #region EyesDir
 
+    public bool EyesReversed => Impressive.Config!.GetValue(Impressive.Eyes_Reversed_Config);
 
     // Left eye direction 
     [OSCMap("/avatar/parameters/FT/v2/EyeLeftX")]
     public float LeftEyeX { set => EyeLeft.SetDirectionFromXY(X: value); }
 
     [OSCMap("/avatar/parameters/FT/v2/EyeLeftY")]
-    public float LeftEyeY { set => EyeLeft.SetDirectionFromXY(Y: value); }
+    public float LeftEyeY { set => EyeLeft.SetDirectionFromXY(Y: EyesReversed ? -value : value); }
 
     
 
@@ -48,7 +49,7 @@ public class SteamEyes
     public float RightEyeX { set => EyeRight.SetDirectionFromXY(X: value); }
 
     [OSCMap("/avatar/parameters/FT/v2/EyeRightY")]
-    public float RightEyeY { set => EyeRight.SetDirectionFromXY(Y: value); }
+    public float RightEyeY { set => EyeRight.SetDirectionFromXY(Y: EyesReversed ? -value : value); }
 
     
 
@@ -116,7 +117,7 @@ public struct SteamLinkEye
     public void SetDirectionFromXY(float? X = null, float? Y = null)
     {
         DirX = X ?? DirX;
-        DirY = Y?? DirY;
+        DirY = Y ?? DirY;
 
         // Get the angles out of the eye look
         float xAng = MathX.Asin(DirX);

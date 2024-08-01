@@ -8,7 +8,9 @@ public partial class Impressive : ResoniteMod
     [AutoRegisterConfigKey]
     internal static ModConfigurationKey<bool> Enabled_Config = new("Enabled", "When checked, enables Impressive face & eye tracking", () => true);
     public static bool Enabled => Config!.GetValue(Enabled_Config);
-    
+
+    internal static ModConfigurationKey<bool> Eyes_Reversed_Config = new("Enabled", "When checked, enables Impressive face & eye tracking", () => true);
+
     [AutoRegisterConfigKey]
     internal static ModConfigurationKey<int> In_Port_Config = new("InPort", "The port on which OSC will listen", () => 9000);
 
@@ -17,7 +19,4 @@ public partial class Impressive : ResoniteMod
 
     [AutoRegisterConfigKey]
     internal static ModConfigurationKey<string> Out_Address_Config = new("OutAddress", "The address on which OSC will send", () => "127.0.0.1");
-
-    [AutoRegisterConfigKey]
-    internal static ModConfigurationKey<bool> Reverse_Eye_y = new("ReverseEyesY", "Reverse eyetracking y direction ", () => false);
 }
