@@ -116,7 +116,7 @@ public struct SteamLinkEye
     public void SetDirectionFromXY(float? X = null, float? Y = null)
     {
         DirX = X ?? DirX;
-        DirY = Y ?? DirY;
+        DirY = Y?? DirY;
 
         // Get the angles out of the eye look
         float xAng = MathX.Asin(DirX);

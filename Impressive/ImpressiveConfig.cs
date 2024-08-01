@@ -17,4 +17,7 @@ public partial class Impressive : ResoniteMod
 
     [AutoRegisterConfigKey]
     internal static ModConfigurationKey<string> Out_Address_Config = new("OutAddress", "The address on which OSC will send", () => "127.0.0.1");
+
+    [AutoRegisterConfigKey]
+    internal static ModConfigurationKey<bool> Reverse_Eye_y = new("ReverseEyesY", "Reverse eyetracking y direction ", () => false);
 }
